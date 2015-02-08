@@ -11,15 +11,15 @@ for path in sorted(glob(join('data', 'WCA_export_*.tsv'))):
     with open(path, encoding='utf-8') as tf:
 
         # Determine the column types (int or string)
-        fieldnames, *rows = [line.split('\t') for line in tf.read().splitlines()]
-        fieldtypes = []
-        for column in zip(*rows):
-            try:
-                list(map(int, column))
-                fieldtypes.append('int32')
-            except:
-                fieldtypes.append('str32')
-
+        fieldnames = next(tf).strip().split('\t')
+        fieldtypes = ['int32'] * len(fieldnames)
+        for row in tf:
+            for i, value in enumerate(row.strip().split('\t')):
+                if fieldtypes[i] == 'int32':
+                    try:
+                        int(value)
+                    except:
+                        fieldtypes[i] = 'str32'
         types.append((typename, varname, fieldnames, fieldtypes, tablename))
 
 # Generate the .go file
