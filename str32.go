@@ -1,5 +1,7 @@
 package main
 
+import "encoding/json"
+
 type str32 int32
 
 var str32List = []string{}
@@ -20,5 +22,5 @@ func (s str32) String() string {
 }
 
 func (s str32) MarshalJSON() ([]byte, error) {
-	return []byte("\"" + str32List[s] + "\""), nil
+	return json.Marshal(str32List[s])
 }
