@@ -23,15 +23,17 @@ More views
 
 Speed tests
 -----------
-Speeds on Stefan's Pentium 997 Linux laptop:
+Speeds on Stefan's Pentium 997 Linux laptop (using `ab -n 1000 $url`):
 ```
-$ ab -n 1000 http://127.0.0.1:8080/cubers/2003POCH01 | grep 'Time per request' | head -1
-Time per request:       0.287 [ms] (mean)
+$ . ./speedtest.sh 
 
-$ ab -n 1000 http://127.0.0.1:8080/rankings/333 | grep 'Time per request' | head -1
-Time per request:       2.114 [ms] (mean)
+http://127.0.0.1:8080/cubers/2003POCH01
+Time per request:       0.299 [ms] (mean)
 
-$ ab -n 1000 http://127.0.0.1:8080/cubers/2008AURO01/results | grep 'Time per request' | head -1
-Time per request:       0.342 [ms] (mean)
+http://127.0.0.1:8080/rankings/333
+Time per request:       2.146 [ms] (mean)
+
+http://127.0.0.1:8080/cubers/2008AURO01/results
+Time per request:       0.312 [ms] (mean)
 ```
 The last one is by far the biggest, but it's fast because it's pre-json'ed and pre-gzip'ed (only for Sébastien - doing it for everyone would take a bit over a minute).
