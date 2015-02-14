@@ -3,6 +3,12 @@ WCA API written in Go
 
 Might end up as API on the WCA server, but so far an experiment using [the WCA export](https://www.worldcubeassociation.org/results/misc/export.html) so everyone can try it.
 
+Online demo
+-----------
+* [http://104.236.109.5:8080/cubers/2004MAOT02](http://104.236.109.5:8080/cubers/2004MAOT02)
+* [http://104.236.109.5:8080/cubers/2008AURO01/results](http://104.236.109.5:8080/cubers/2008AURO01/results)
+* [http://104.236.109.5:8080/rankings/333](http://104.236.109.5:8080/rankings/333)
+
 How to use it
 -------------
 
