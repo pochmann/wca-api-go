@@ -1,0 +1,19 @@
+<html>
+  <body>
+    <table border="1">
+    {% for result in results %}
+      <tr>
+        <td><a href="/competitions/{{ result.competition.id }}">{{ result.competition.name }}</a></td>
+        <td>{{ result.eventId }}</td>
+        <td>{{ result.roundId }}</td>
+        <td>{{ result.pos }}</td>
+        <td>{{ result.best }}</td>
+        <td>{{ result.bestMarker }}</td>
+        <td>{{ result.average }}</td>
+        <td>{{ result.averageMarker }}</td>
+        <td>{{ result.singles }}</td>
+      </tr>
+    {% endfor %}
+    </table>
+  </body>
+</html>
